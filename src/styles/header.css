@@ -1,0 +1,59 @@
+header a {
+  color: inherit;
+}
+
+header a:hover {
+  color: black;
+}
+
+header [aria-current] {
+  font-weight: 600;
+  color: black;
+}
+
+.index header a {
+  color: black;
+}
+
+.index header a:hover {
+  background: #E2E2E2;
+}
+
+header li {
+  color: var(--gray-4);
+  font-family: var(--sans-serif);
+}
+
+
+/* ======= */
+/* top nav */
+/* ======= */
+
+header {
+  padding-top: 1.1rem;
+  margin-bottom: 2rem;
+  margin-left: var(--mobile-margin);
+  margin-right: var(--mobile-margin);
+}
+
+header nav li {
+  text-transform: uppercase;
+  font-size: 75%;
+  letter-spacing: .08em;
+  font-weight: 500;
+  margin-bottom: .4rem;
+}
+
+@media (max-width: 520px) {
+  header {
+    margin-left: var(--mobile-margin);
+    margin-right: var(--mobile-margin);
+  }
+}
+
+@media (min-width: 765px) {
+  header {
+    padding-top: 2.4rem;
+    margin-left: var(--desktop-margin);
+  }
+}

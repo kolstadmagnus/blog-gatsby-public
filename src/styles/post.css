@@ -1,0 +1,559 @@
+/* =====
+LAYOUT
+===== */
+
+/* LINE LENGTH */
+
+/* don't set a max-width on the global wrapper, since I want larger figures */
+.post nav,
+.post div,
+.post aside,
+.post p,
+.post ol,
+.post ul,
+.post address,
+.post hr,
+.post table,
+.post blockquote,
+.post h1, h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6,
+.post figure {
+  margin: var(--centered);
+  max-width: var(--line-length);
+}
+
+.post figcaption {
+  max-width: var(--line-length);
+}
+
+
+
+/* use direct-child selector here so that nested elements don't get extra margin */
+@media (max-width: 520px) {
+  .post>div,
+  .post>aside,
+  .post>p,
+  .post>ol,
+  .post>ul,
+  .post>hr,
+  .post>address,
+  .post>table,
+  .post>blockquote,
+  .post>h1,
+  .post>h2,
+  .post>h3,
+  .post>h4,
+  .post>h5,
+  .post>h6,
+  .post figure.small,
+  .post figure.datawrapper,
+  .post figcaption {
+    margin-left: var(--mobile-margin);
+    margin-right: var(--mobile-margin);
+  }
+
+  .post figure.small figcaption,
+  .post figure.youtube figcaption {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .post figure.youtube {
+    margin-left: var(--mobile-margin);
+    margin-right: var(--mobile-margin);
+  }
+}
+
+@media (max-width: 1180px) {
+  .post figure.medium figcaption,
+  .post figure.large figcaption,
+  .post figure.xlarge figcaption {
+    margin-left: 1.3rem;
+  }
+}
+
+
+/* widths */
+
+.post figure.medium,
+.post figure.youtube {
+  max-width: 32rem;
+}
+
+.post figure.large {
+  max-width: 48rem;
+}
+
+.post figure.xlarge {
+  max-width: 52rem;
+}
+
+.post figure.full {
+  max-width: none;
+}
+
+
+/* space above & below */
+
+.post figure.small,
+.post figure.medium {
+  margin-top: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.post figure.large,
+.post figure.xlarge {
+  margin-top: 2.8rem;
+  margin-bottom: 2.2rem;
+}
+
+.post figure.datawrapper {
+  margin-top: 2.6rem;
+  margin-bottom: 2.6rem;
+}
+
+.post figure.youtube {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 520px) {
+  .post figure.medium,
+  .post figure.large,
+  .post figure.xlarge {
+    margin-top: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+
+
+
+/* ===============
+BASIC BLOCK STYLES
+=============== */
+
+/* body text */
+.post p,
+.post li {
+  margin-bottom: .9rem;
+  line-height: 1.42;
+  font-size: 1rem;
+  font-variant-numeric: proportional-nums;
+  font-weight: 500;
+}
+
+
+/* lists */
+
+.post ol,
+.post ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+.post ol {
+  counter-reset: foobar;
+}
+
+.post li {
+  margin-bottom: .8em;
+}
+
+.post > ol li {
+  margin-left: 2.8rem;
+}
+
+.post > ul li {
+  margin-left: 1.8rem;
+}
+
+.post > ul li:before {
+  content: "•";
+  position: absolute;
+  margin-left: -1.8rem;
+  color: var(--gray-2);
+}
+
+.post > ol li:before {
+  content: counter(foobar);
+  counter-increment: foobar;
+  position: absolute;
+  margin-left: -2.8rem;
+  margin-top: -.1em;
+  font-family: "Concourse-index";
+  font-size: 120%;
+}
+
+
+
+/* ======================
+FIGURES (IMAGES & IFRAMES)
+====================== */
+
+/* graphs (Datawrapper iframes) */
+
+.post figure.datawrapper h2 {
+  margin-bottom: 1.2rem;
+  padding-right: 2rem;
+  font-size: 92%;
+  font-weight: 400;
+  font-family: var(--sans-serif);
+  font-variant: normal;
+  text-transform: initial;
+  color: var(--gray-6);
+}
+
+/* figcaptions */
+
+.post figcaption {
+  margin-top: .8rem;
+  line-height: 1.36;
+  font-size: 80%;
+  color: var(--blue-gray);
+}
+
+/* space between caption and image credit within caption */
+.post figcaption span:first-child {
+  margin-right: .34rem;
+}
+
+/* image credit */
+.post figcaption span:last-child,
+.post .fact-box cite {
+  font-size: 80%;
+  font-style: normal;
+  color: var(--light-gray);
+}
+
+
+.post blockquote {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.post blockquote p {
+  margin-left: 1.6rem;
+  border-left: 1px solid #ccc;
+  padding-left: .8rem;
+}
+
+
+
+/* byline & language select */
+
+.post .byline,
+.post .lang-select {
+  font-family: var(--sans-serif);
+  color: var(--gray-2);
+  letter-spacing: .01em;
+}
+
+.post .byline {
+  margin-top: 2.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.post p+.byline {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+@media (max-width: 520px) {
+  .post .byline {
+    margin-top: 1.6rem;
+  }
+}
+
+/* name */
+.post .byline p {
+  margin-bottom: .44rem;
+  font-weight: 500;
+  font-size: 78%;
+  font-style: normal;
+}
+
+.post .byline p a {
+  color: currentColor;
+  font-weight: 600;
+  /*   text-decoration: underline;
+  text-underline-offset: 1px;
+  text-decoration-color: #ccc; */
+}
+
+/* date */
+.post .byline time,
+.post .lang-select {
+  font-variant-numeric: lining-nums;
+  font-size: 98%;
+}
+
+
+/* language picker */
+
+.post .lang-select {
+  margin-top: 1rem;
+  margin-bottom: 1.08rem;
+}
+
+.post .byline+.lang-select {
+  margin-top: -.28rem;
+}
+
+
+/* additional-information boxes */
+
+.post .fact-box,
+.post aside {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding-top: .8rem;
+  padding-bottom: .1rem;
+}
+
+.post .fact-box {
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.post aside {
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.post .fact-box ul {
+  margin-top: .4rem;
+  margin-bottom: 1rem;
+}
+
+.post .fact-box li,
+.post aside p,
+.post .fact-box label {
+  color: var(--blue-gray);
+}
+
+.post .fact-box li,
+.post aside p {
+  margin-bottom: .7rem;
+  line-height: 1.4;
+  font-size: 85%;
+}
+
+.post .fact-box label {
+  display: block;
+  margin-bottom: .2rem;
+  font-size: 80%;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.post .fact-box h2 {
+  margin-top: 0;
+  margin-bottom: .8rem;
+}
+
+@media (max-width: 520px) {
+  .post .fact-box,
+  .post aside {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/* additional-comments box at the end of articles */
+
+.post .comments {
+  margin-top: 3rem;
+}
+
+.post .comments h3 {
+  margin-bottom: .8rem;
+  padding-bottom: .7rem;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-bottom: 4px double #ccc;
+}
+
+.post .comments ul {
+  margin-top: 0;
+}
+
+.post .comments li {
+  margin-left: 2.5rem;
+  font-size: 95%;
+}
+
+.post .comments li:before {
+  content: "•";
+  font-family: concourse-index;
+  position: absolute;
+  margin-left: -2.5rem;
+}
+
+
+/* misc. block styles */
+
+.post .big-question {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 120%;
+  font-weight: 600;
+}
+
+
+
+/* =============
+CHARACTER STYLES
+============= */
+
+.post a {
+  color: var(--link-text);
+}
+
+.post code {
+  font-size: 95%;
+  padding-left: .2em;
+  padding-right: .2em;
+}
+
+.post .small-caps {
+  font-variant: small-caps;
+  font-feature-settings: "c2sc";
+  /* small-caps forms */
+  text-transform: lowercase;
+  /* no first caps with small caps! */
+}
+
+.post .small-caps a {
+  color: inherit;
+}
+
+.post sup {
+  font-size: 65%;
+  font-family: var(--sans-serif);
+  letter-spacing: .05em;
+}
+
+
+/* =====
+HEADINGS
+===== */
+
+.post header {
+  padding: 0;
+  margin: var(--centered);
+  margin-top: 2.2rem;
+}
+
+@media (max-width: 520px) {
+  .post header {
+    margin-top: 2.4rem;
+  }
+}
+
+.post .date {
+  margin-top: 0;
+  margin-bottom: .28rem;
+  font-size: 80%;
+  color: var(--gray-3);
+}
+
+/* title */
+.post h1,
+h1 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 175%;
+  line-height: 1.1;
+  letter-spacing: .01em;
+  font-weight: 900;
+}
+
+
+/* intro */
+.post h1+p,
+h1+p {
+  margin-top: .8rem;
+  margin-bottom: 1.24rem;
+  font-size: 115%;
+}
+
+
+/* regular subheading */
+.post h2 {
+  margin-top: 2.2rem;
+  margin-bottom: .5rem;
+  line-height: 1.36;
+  font-size: 115%;
+}
+
+@media (max-width: 520px) {
+  .post h2 {
+    margin-top: 1.8rem;
+  }
+}
+
+@media (min-width: 765px) {
+  .post figure+h2 {
+    margin-top: 2.6rem;
+  }
+}
+
+/* all-caps subheading */
+.post h3 {
+  margin-top: 1.6rem;
+  margin-bottom: .4rem;
+  font-size: 100%;
+  font-weight: 700;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-feature-settings: var(--smcp-forms);
+}
+
+.post h4 {
+  margin-bottom: .4rem;
+  margin-top: 1.8rem;
+  font-weight: 900;
+  font-size: 100%;
+  letter-spacing: .01em;
+}
+
+.post ol+h2 {
+  margin-top: 3rem;
+}
+
+.post ol+h3 {
+  margin-top: 2rem;
+}
+
+.post h2+ol,
+.post h2+ul,
+.post h3+ol,
+.post h3+ul {
+  margin-top: 1rem;
+}
+
+
+
+/* ========
+hyphenation
+======== */
+
+/* see global.css for more rules */
+
+.post>p,
+.post>li {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}

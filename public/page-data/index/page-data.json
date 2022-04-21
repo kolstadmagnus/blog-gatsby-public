@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-index-js",
+    "path": "/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Magnus Kolstad"}},"allMdx":{"nodes":[{"excerpt":"Hardt mellomrom ( &nbsp; ) skaper problemer med tankestreker ( – ). Denne feilen virker å plage de fleste nettlesere. Jeg har ennå ikke…","fields":{"slug":"/diskusjon/omrader-der-html-og-css-feiler-norsk/"},"frontmatter":{"computerDate":"2022-04-20","humanDate":"20. april 2022","title":"Områder der HTML og CSS feiler norsk","lead":"Teknologiene har flere hull som skaper problemer i den norske nettverden.","type":null,"featuredImage":null}}]}},"pageContext":{}},
+    "staticQueryHashes": ["2774968152"]}

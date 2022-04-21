@@ -1,0 +1,174 @@
+:root {
+  --gray-2: #222;
+  --gray-3: #333;
+  --gray-4: #444;
+  --gray-5: #555;
+  --gray-6: #666;
+  --gray-7: #777;
+  --gray-8: #888;
+  --gray-9: #999;
+  --blue-gray: #676A76;
+  --light-gray: #818181;
+  --link-text: firebrick;
+  --link-background: #FFF5F5;
+  --grid-border: #e2e2e2;
+  --serif: "Heliotrope", "Georgia", serif;
+  --sans-serif: "Concourse", "Helvetica", sans-serif;
+  --monospace: "Triplicate", "Courier", monospace;
+  --mobile-margin: 1.2rem;
+  --desktop-margin: 3rem;
+  --centered: 0 auto;
+  --line-length: 26rem;
+  --smcp-forms: "c2sc"1;
+  --fallback: #ddd;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--serif);
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "kern";
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 17px
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 20px
+  }
+}
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 22px
+  }
+}
+
+body {
+  margin: var(--centered);
+  padding: 0;
+  max-width: 100rem;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a span:hover,
+:target {
+  background: var(--link-background);
+  transition: .2s ease-in-out;
+}
+
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: var(--monospace);
+}
+
+address {
+  font-style: inherit;
+}
+
+
+
+/* ========
+hyphenation
+======== */
+
+p,
+li,
+h1,
+h2,
+h3 {
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+  -moz-hyphenate-limit-chars: 6 3 3;
+  -moz-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-last: always;
+  -moz-hyphenate-limit-zone: 8%;
+  -ms-hyphenate-limit-chars: 6 3 3;
+  -ms-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-last: always;
+  -ms-hyphenate-limit-zone: 8%;
+  hyphenate-limit-before: 3;
+  hyphenate-limit-after: 3;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+/* don't hyphenate important elements! */
+b,
+i,
+em,
+code,
+cite,
+strong,
+.small-caps,
+.black,
+.medium,
+.no-hyphens,
+.no-hyphens p,
+.no-hyphens li,
+.no-hyphens h1,
+.no-hyphens h2,
+.no-hyphens h3 {
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+/* necessary on mobile due to shorter line length */
+@media (max-width: 520px) {
+
+  h1,
+  h2,
+  h3 {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
+
+.bottom-padding {
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 765px) {
+  .bottom-padding {
+    padding-bottom: 8rem;
+  }
+}

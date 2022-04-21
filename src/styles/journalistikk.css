@@ -1,0 +1,189 @@
+.journalistikk {
+  max-width: 58rem;
+  margin: var(--centered);
+}
+
+.journalistikk ol,
+.journalistikk nav {
+  margin-left: var(--mobile-margin);
+  margin-right: var(--mobile-margin);
+}
+
+.journalistikk ol figure {
+  max-width: none;
+  margin: 0;
+}
+
+.journalistikk figcaption {
+  text-align: right;
+  font-size: 60%;
+  margin-top: .4rem;
+  margin-bottom: 0;
+  color: #A2A2A2;
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+
+.journalistikk p,
+.journalistikk h2 {
+  max-width: var(--line-length);
+}
+
+.journalistikk .date {
+  color: var(--gray-2);
+  font-size: 75%;
+  font-weight: 500;
+  letter-spacing: .02em;
+  margin-top: 1rem;
+  margin-bottom: .34rem;
+}
+
+.journalistikk h2 {
+  font-size: 140%;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.journalistikk .hook {
+  font-size: 90%;
+  margin-top: .38rem;
+  margin-bottom: .2rem;
+  line-height: 1.38;
+}
+
+
+@media (max-width: 765px) {
+  .journalistikk li {
+    margin-top: 1.3rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .journalistikk li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+@media (min-width: 765px) {
+  .journalistikk ol {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+  }
+
+  .journalistikk li {
+    position: relative;
+    border-right: 1px solid var(--grid-border);
+    box-sizing: content-box;
+    flex-grow: 1;
+    width: 28%;
+    padding-bottom: .6rem;
+    margin-bottom: .2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2.6rem;
+  }
+
+  .journalistikk li::before {
+    content: '';
+    position: absolute;
+    top: -1.1rem;
+    left: 0;
+    display: block;
+    width: 101%;
+    height: 1px;
+    background: var(--grid-border);
+  }
+
+
+  .journalistikk li:first-child::before {
+    content: none;
+  }
+
+  .journalistikk li:first-child {
+    border-top: none;
+    border-right: 0 none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.6rem;
+    padding-bottom: .8rem;
+    width: 100%;
+  }
+
+  .journalistikk li:first-child article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    column-gap: 4rem;
+  }
+
+  .journalistikk li:first-child article figure {
+    width: 40%;
+    order: 2;
+  }
+
+  .journalistikk li:first-child article>div {
+    width: 35%;
+  }
+
+  .journalistikk li:first-child h2 {
+    font-size: clamp(150%, 3vw, 170%);
+    line-height: 1;
+    margin-top: .4rem;
+    margin-bottom: .6rem;
+  }
+
+  .journalistikk li:first-child .hook {
+    font-size: 95%;
+  }
+
+  .journalistikk li:nth-child(2),
+  .journalistikk li:nth-child(5),
+  .journalistikk li:nth-child(4n+5) {
+    padding-left: 0;
+  }
+
+  .journalistikk li:nth-child(4),
+  .journalistikk li:nth-child(8),
+  .journalistikk li:nth-child(4n+8) {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .journalistikk li:nth-child(2),
+  .journalistikk li:nth-child(3),
+  .journalistikk li:nth-child(4) {
+    width: 28%;
+  }
+
+  .journalistikk li:nth-child(n+5) {
+    width: 20%;
+  }
+
+  .journalistikk li:nth-child(n+5) article figure {
+    width: 100%;
+  }
+
+  .journalistikk li:nth-child(n+5) .date,
+  .journalistikk li:nth-child(n+5) .hook {
+    display: none;
+  }
+
+  .journalistikk li:nth-child(n+5) h2 {
+    margin-top: .9rem;
+    margin-bottom: 0;
+    font-size: 108%;
+    padding-bottom: .4rem;
+  }
+
+  .journalistikk li:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}
